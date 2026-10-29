@@ -13,7 +13,9 @@ hr_attendance_backend/uploads/
 # ===========================
 # Node / React Native (Frontend)
 # ===========================
-hr_frontend_app/node_modules/
+node_modules/
+**/node_modules/
+**/dist/
 hr_frontend_app/.expo/
 hr_frontend_app/.idea/
 hr_frontend_app/app-7vshm2afcow1/
