@@ -54,14 +54,12 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(
-                List.of("https://d38c4oo8nszzaz.cloudfront.net", "http://localhost:5173",
-                        "https://edutalks.edu-attendance.work.gd", "http://127.0.0.1:5173"));
+        config.setAllowedOriginPatterns(List.of("*"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
-        config.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-User-Id"));
+        config.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-User-Id", "Bypass-Tunnel-Reminder"));
         config.setExposedHeaders(List.of("Authorization", "Content-Type", "X-User-Id"));
         config.setAllowCredentials(true);
-        config.setMaxAge(3600L); // 1 hour
+        config.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
