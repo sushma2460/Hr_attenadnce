@@ -43,7 +43,7 @@ class ApiService {
   constructor() {
     this.client = axios.create({
       baseURL: API_BASE_URL,
-      timeout: 15000, // Increased timeout for 2G/3G stability
+      timeout: 60000, // 60s timeout to allow free cloud instances to wake up
       withCredentials: true,
       headers: {
         'Content-Type': 'application/json'
@@ -179,6 +179,8 @@ class ApiService {
       } else {
         toast.error(message);
       }
+    } else if (error.code === 'ECONNABORTED' || error.message?.includes('timeout')) {
+      toast.error('The cloud server was sleeping and is waking up. Please try again now!');
     } else if (error.request) {
       toast.error('Network error. Please check your connection.');
     } else {
