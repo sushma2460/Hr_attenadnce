@@ -35,13 +35,15 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-4 lg:p-8 relative overflow-hidden bg-[#0F172A] font-sans selection:bg-blue-500/30">
+    <div className="min-h-screen w-full flex flex-col items-center justify-start sm:justify-center p-4 py-8 lg:p-8 relative overflow-y-auto bg-[#0F172A] font-sans selection:bg-blue-500/30">
       {/* Premium Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-[#0F172A] to-blue-900/20" />
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/10 blur-[120px]" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-indigo-600/10 blur-[120px]" />
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-[#0F172A] to-blue-900/20" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/10 blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-indigo-600/10 blur-[120px]" />
+      </div>
 
-      <div className="w-full max-w-[450px] relative z-10 transition-all duration-500 ease-out transform">
+      <div className="w-full max-w-[450px] relative z-10 transition-all duration-500 ease-out transform my-auto">
 
         {/* Header Section */}
         <div className="mb-8 text-center space-y-2">
