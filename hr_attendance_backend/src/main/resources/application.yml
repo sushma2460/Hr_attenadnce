@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/Hr-Application
-    username: postgres
-    password: root
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/Hr-Application}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:root}
     driver-class-name: org.postgresql.Driver
  
   jpa:
@@ -35,5 +35,5 @@ spring:
       max-request-size: 20GB
  
 server:
-  port: 9090
+  port: ${PORT:9090}
   address: 0.0.0.0
